@@ -1,3 +1,6 @@
+# Draft a markdown blog file
+# from a this bookmarklet:
+# javascript:(function()%7Bif(document.location.href.indexOf('http')===0)document.location.href='pythonista://DraftLink?action=run&argv='+document.location.href;%7D)();
 
 import clipboard
 import sys
@@ -5,16 +8,8 @@ import re
 import console
 import codecs
 import webbrowser
-from  bs4 import BeautifulSoup
 import urllib
 import dropboxlogin
-
-# Get URL title
-def process(url):
-  page = urllib.urlopen(url)
-  soup = BeautifulSoup(page.read())
-  page.close()
-  return soup.title.string.strip()
 
 # Convert title to slug
 def convert_title(title):
@@ -42,7 +37,7 @@ def upload(slug, dropbox_draft_path):
   print '\nUploading ' + slug +'.md'
   f = open(slug + '.md')
   db = dropboxlogin.get_client()
-  db.put_file(dropbox_draft_path + slug + '.md', f)
+  response = db.put_file(dropbox_draft_path + slug + '.md', f)
 
 
 
@@ -52,7 +47,8 @@ if __name__ == '__main__':
 
   print sys.argv[1]
   url = sys.argv[1]
-  title = console.input_alert('Edit Title', '', process(url))
+  title = sys.argv[2]
+  title = console.input_alert('Edit Title', '', title)
   slug = console.input_alert('Edit Slug', '', convert_title(title))
   makefile(slug, url, title)
   upload(slug, dropbox_draft_path)
