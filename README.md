@@ -27,5 +27,5 @@ An adaptation of an image resizing script by [MacDrfiter]. Image sizes and paths
 [Pythonista]:https://itunes.apple.com/us/app/pythonista/id528579881?mt=8&ign-mpt=uo%3D4
 [MacDrfiter]:http://www.macdrifter.com/2012/11/the-power-of-pythonista-12.html
 [converting Twitter.com URLs to Tweetbot Links]:http://www.macstories.net/tutorials/convert-twitter-com-urls-to-tweetbot-links/
-[PySky]:http://jayhickey.com/2012/10/25/bringing-dark-sky-to-the-mac-with-pysky
+[PySky]:https://github.com/jayhickey/PySky
 [post on the Pythonista forums]:http://omz-software.com/pythonista/forums/discussion/10/using-the-dropbox-module#Item_3
