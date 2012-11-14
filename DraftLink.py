@@ -7,6 +7,7 @@ import sys
 import re
 import console
 import codecs
+from os import remove
 import webbrowser
 import urllib
 import dropboxlogin
@@ -38,7 +39,7 @@ def upload(slug, dropbox_draft_path):
   f = open(slug + '.md')
   db = dropboxlogin.get_client()
   response = db.put_file(dropbox_draft_path + slug + '.md', f)
-
+  remove(slug + '.md')
 
 
 if __name__ == '__main__':
