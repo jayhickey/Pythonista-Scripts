@@ -5,11 +5,11 @@ This is a list of my personal [Pythonista] scripts. I've uploaded them here most
 
 DraftLink.py
 ------
-Drafts a Markdown text file from a URL passed with this bookmarklet
+Drafts a Markdown text file from a URL passed with this bookmarklet:
     
-        javascript:(function()%7Bif(document.location.href.indexOf('http')===0)document.location.href='pythonista://DraftLink?action=run&argv='+document.location.href;%7D)();
+         javascript:window.location='pythonista://DraftLink?action=run&argv='+encodeURIComponent(document.location.href)+'&argv='+encodeURIComponent(document.title);
 
-    and can also include a block quote from copied text on the clipboard. The file is uploaded to a specified path on Dropbox, and then opened in Nebulous Notes for additional commentary. The `dropboxlogin.py` script handles the Dropbox requests. This DropBox module was taken from Pythonista creator OMZ's [post on the Pythonista forums].
+and can also include a block quote from copied text on the clipboard. The file is uploaded to a specified path on Dropbox, and then opened in Nebulous Notes for additional commentary. The `dropboxlogin.py` script handles the Dropbox requests. This DropBox module was taken from Pythonista creator OMZ's [post on the Pythonista forums].
 
 PySky.py
 -----
